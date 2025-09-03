@@ -56,6 +56,51 @@ export type Database = {
         }
         Relationships: []
       }
+      agendamentos: {
+        Row: {
+          created_at: string
+          data_preferencial: string
+          data_solicitacao: string
+          descricao_problema: string | null
+          endereco: string
+          id: string
+          nome_cliente: string
+          status: string
+          telefone: string
+          tipo_servico: string
+          updated_at: string
+          url_foto: string | null
+        }
+        Insert: {
+          created_at?: string
+          data_preferencial: string
+          data_solicitacao?: string
+          descricao_problema?: string | null
+          endereco: string
+          id?: string
+          nome_cliente: string
+          status?: string
+          telefone: string
+          tipo_servico: string
+          updated_at?: string
+          url_foto?: string | null
+        }
+        Update: {
+          created_at?: string
+          data_preferencial?: string
+          data_solicitacao?: string
+          descricao_problema?: string | null
+          endereco?: string
+          id?: string
+          nome_cliente?: string
+          status?: string
+          telefone?: string
+          tipo_servico?: string
+          updated_at?: string
+          url_foto?: string | null
+        }
+        Relationships: []
+      }
       bookings: {
         Row: {
           check_in_date: string
