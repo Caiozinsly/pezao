@@ -40,3 +40,33 @@
 .read-the-docs {
   color: #888;
 }
+
+.developer-credit {
+    display: inline-block; /* Garante que o espaçamento funcione bem */
+    margin-left: 20px;
+}
+
+.instagram-dev-button {
+    display: inline-flex; /* Alinha o ícone e o texto */
+    align-items: center;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo muito subtil */
+    color: #a0a0a0; /* Cor do texto cinza claro */
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: 1px solid #444; /* Borda escura */
+    transition: all 0.3s ease;
+}
+
+.instagram-dev-button:hover {
+    background-color: #c5a47e; /* Fundo dourado ao passar o rato */
+    color: #1c1c1c; /* Texto escuro para contraste */
+    border-color: #c5a47e;
+}
+
+.instagram-dev-button .instagram-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    fill: currentColor; /* O ícone herda a cor do texto (cinza ou preto no hover) */
+}
