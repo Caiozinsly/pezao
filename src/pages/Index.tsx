@@ -59,7 +59,7 @@ const Index = () => {
           <div className="max-w-6xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Wrench className="h-12 w-12 text-blue-600" />
-              <h1 className="text-5xl font-bold text-blue-900">Agende comigo.</h1>
+              <h1 className="text-5xl font-bold text-blue-900"> PEZAO .</h1>
             </div>
             <p className="text-2xl text-blue-700 font-medium mb-4">Marido de Aluguel</p>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
