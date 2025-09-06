@@ -189,7 +189,7 @@ const Index = () => {
               <span>Atendimento: Segunda à Sábado das 8h às 18h</span>
             </div>
             <div className="mt-6 pt-6 border-t border-gray-700">
-              <Link to="/admin" className="text-gray-400 hover:text-white text-sm">
+              <Link to="/login" className="text-gray-400 hover:text-white text-sm">
                 Painel Administrativo
               </Link>
             </div>
