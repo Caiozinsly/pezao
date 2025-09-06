@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { Calendar, User, Phone, MapPin, Eye, RefreshCw } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { Calendar, User, Phone, MapPin, Eye, RefreshCw, LogOut } from "lucide-react";
 
 interface Agendamento {
   id: string;
@@ -25,6 +26,7 @@ interface Agendamento {
 const AdminPanel = () => {
   const [agendamentos, setAgendamentos] = useState<Agendamento[]>([]);
   const [loading, setLoading] = useState(true);
+  const { signOut } = useAuth();
 
   const fetchAgendamentos = async () => {
     try {
@@ -129,10 +131,16 @@ PEZÃO - Marido de Aluguel`;
           </div>
           <div className="flex justify-between items-center">
             <h2 className="text-3xl font-bold text-foreground">Agendamentos</h2>
-            <Button onClick={fetchAgendamentos} variant="outline">
-              <RefreshCw className="h-4 w-4 mr-2" />
-              Atualizar
-            </Button>
+            <div className="flex gap-2">
+              <Button onClick={fetchAgendamentos} variant="outline">
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Atualizar
+              </Button>
+              <Button onClick={signOut} variant="outline">
+                <LogOut className="h-4 w-4 mr-2" />
+                Sair
+              </Button>
+            </div>
           </div>
         </div>
 

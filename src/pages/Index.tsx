@@ -3,23 +3,29 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Wrench, Phone, MapPin, Clock, Star, CheckCircle, Calendar, Instagram } from "lucide-react";
 import bg from "@/assets/pezao.png";
+import pequenosReparos from "@/assets/pequenos-reparos.jpg";
+import instalacoes from "@/assets/instalacoes.jpg";
+import manutencaoGeral from "@/assets/manutencao-geral.jpg";
 
 const Index = () => {
   const servicos = [
     {
       icon: <Wrench className="h-8 w-8 text-blue-600" />, 
       titulo: "Pequenos Reparos",
-      descricao: "Reparos residenciais e comerciais com qualidade"
+      descricao: "Reparos residenciais e comerciais com qualidade",
+      bgImage: pequenosReparos
     },
     {
       icon: <MapPin className="h-8 w-8 text-orange-500" />, 
       titulo: "Instalações",
-      descricao: "Instalações elétricas, hidráulicas e mais"
+      descricao: "Instalações elétricas, hidráulicas e mais",
+      bgImage: instalacoes
     },
     {
       icon: <CheckCircle className="h-8 w-8 text-green-600" />, 
       titulo: "Manutenção Geral",
-      descricao: "Manutenção preventiva e corretiva"
+      descricao: "Manutenção preventiva e corretiva",
+      bgImage: manutencaoGeral
     }
   ];
 
@@ -97,14 +103,22 @@ const Index = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {servicos.map((servico, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                  <CardHeader>
+                <Card key={index} className="text-center hover:shadow-lg transition-shadow relative overflow-hidden">
+                  {/* Background Image */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center opacity-20" 
+                    style={{ backgroundImage: `url(${servico.bgImage})` }}
+                  />
+                  {/* Overlay for better text readability */}
+                  <div className="absolute inset-0 bg-white/80" />
+                  {/* Card Content */}
+                  <CardHeader className="relative z-10">
                     <div className="flex justify-center mb-4">
                       {servico.icon}
                     </div>
                     <CardTitle className="text-xl">{servico.titulo}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-10">
                     <CardDescription className="text-base">
                       {servico.descricao}
                     </CardDescription>
